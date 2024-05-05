@@ -9,7 +9,8 @@ export default class CustomDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -31,11 +32,7 @@ export default class CustomDocument extends Document {
       <Html>
         <Head>
           {/* favicon */}
-          <link
-            rel="shortcut icon"
-            type="image/x-icon"
-            href="https://s3.amazonaws.com/redqteam.com/deadline/favicon/favicon.png"
-          />
+          <link rel="shortcut icon" href="/favicon.ico" />
           {/* load google fonts  */}
           <link
             href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap"
